@@ -121,6 +121,20 @@ namespace BandTracker
             Assert.Equal(0, Venue.GetAll().Count);
         }
 
+        [Fact]
+        public void DeleteAll_DeleteAllVenues_Deleted()
+        {
+            Venue venue1 = new Venue("The Moore");
+            venue1.Save();
+            Venue venue2 = new Venue("The Crocodile");
+            venue2.Save();
+
+            Venue.DeleteAll();
+
+            Assert.Equal(0, Venue.GetAll().Count);
+        }
+
+
 
 
         public void Dispose()

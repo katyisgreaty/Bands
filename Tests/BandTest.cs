@@ -111,6 +111,7 @@ namespace BandTracker
 
             Assert.Equal(0, Band.GetAll().Count);
         }
+
         [Fact]
         public void DeleteAll_DeleteAllBands_Deleted()
         {
