@@ -30,7 +30,7 @@
 </form>
 <h4><a href="/band/new" class="btn">Add a new band</a></h4>
 <hr/>
-<form action="/venue/delete/@Model.GetId()" method="post">
+<form action="/venue/delete/@Model["venue"].GetId()" method="post">
     <input type="hidden" name="_method" value="DELETE">
     <button type="submit" class="btn">Delete this venue</button>
 </form>
