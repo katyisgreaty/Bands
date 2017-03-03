@@ -92,7 +92,7 @@ namespace BandTracker
         }
 
         [Fact]
-        public void Add_DeleteBandFromVenue()
+        public void Delete_DeleteBandFromVenue()
         {
             Band newBand = new Band("Natalie Portman's Shaved Head");
             newBand.Save();
