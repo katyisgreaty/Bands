@@ -77,6 +77,20 @@ namespace BandTracker
             Assert.Equal(testVenue, foundVenue);
         }
 
+        [Fact]
+        public void Add_AddBandToVenue()
+        {
+            Band newBand = new Band("Natalie Portman's Shaved Head");
+            newBand.Save();
+            Venue newVenue = new Venue("Marymoor Park");
+            newVenue.Save();
+            List<Band> expected = new List<Band>{newBand};
+
+            newVenue.AddBand(newBand.GetId());
+
+            Assert.Equal(expected, newVenue.GetBands());
+        }
+
 
         public void Dispose()
         {
