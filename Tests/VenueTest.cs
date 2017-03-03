@@ -110,6 +110,17 @@ namespace BandTracker
             // Assert.Equal(newName, result.GetName());
         }
 
+        [Fact]
+        public void Delete_RemoveVenueFromDatabase_Deleted()
+        {
+            Venue newVenue = new Venue("High Dive");
+            newVenue.Save();
+
+            Venue.Delete(newVenue.GetId());
+
+            Assert.Equal(0, Venue.GetAll().Count);
+        }
+
 
 
         public void Dispose()

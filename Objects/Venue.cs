@@ -219,6 +219,22 @@ namespace BandTracker
             }
         }
 
+        public static void Delete(int id)
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("DELETE FROM venues WHERE id=@VenueId;", conn);
+            cmd.Parameters.Add(new SqlParameter("@VenueId", id));
+
+            cmd.ExecuteNonQuery();
+
+            if (conn != null)
+            {
+                conn.Close();
+            }
+        }
+
 
 
         public static void DeleteAll()
