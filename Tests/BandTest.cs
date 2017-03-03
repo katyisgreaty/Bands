@@ -111,6 +111,18 @@ namespace BandTracker
 
             Assert.Equal(0, Band.GetAll().Count);
         }
+        [Fact]
+        public void DeleteAll_DeleteAllBands_Deleted()
+        {
+            Band band1 = new Band("Lucas Graham");
+            band1.Save();
+            Band band2 = new Band("Ray LaMontagne");
+            band2.Save();
+
+            Band.DeleteAll();
+
+            Assert.Equal(0, Band.GetAll().Count);
+        }
 
 
         public void Dispose()
