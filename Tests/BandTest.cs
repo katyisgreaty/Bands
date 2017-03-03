@@ -101,6 +101,17 @@ namespace BandTracker
             Assert.Equal(testList, result);
         }
 
+        [Fact]
+        public void Delete_RemoveBandFromDatabase_Deleted()
+        {
+            Band newBand = new Band("Adele");
+            newBand.Save();
+
+            Band.Delete(newBand.GetId());
+
+            Assert.Equal(0, Band.GetAll().Count);
+        }
+
 
         public void Dispose()
         {
