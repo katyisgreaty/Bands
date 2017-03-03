@@ -23,7 +23,7 @@ namespace BandTracker
         [Fact]
         public void Equals_BandsReturnEqualIfSameName_true()
         {
-            //Arrange, Act
+            //Arrange
             Band firstBand = new Band("The Lumineers");
             Band secondBand = new Band("The Lumineers");
 

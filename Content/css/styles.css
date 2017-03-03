@@ -6,6 +6,7 @@ body {
     color: white;
     background-size: cover;
     background-position: center;
+    font-size: 26px; 
 }
 main {
     flex: 1 0 auto;
@@ -34,6 +35,9 @@ main {
     font-size: 22px;
 }
 
+#editv, #editb {
+    color: white !important;
+}
 
 purple complementary color: #616985
 

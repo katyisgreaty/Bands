@@ -1,0 +1,11 @@
+@{
+    Layout = "Shared/_Layout.cshtml";
+}
+
+<h1>Update @Model.GetName()</h1>
+<form action="/bands/@Model.GetId()/updated" method="post">
+    <input type="hidden" name="_method" value="PATCH">
+    <label for="new-band-name">New band name:</label>
+    <input id="new-band-name" name="new-band-name" type="text">
+    <button class="btn" type="submit">Update band</button>
+</form>

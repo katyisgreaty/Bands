@@ -121,14 +121,14 @@ namespace BandTracker
             SqlDataReader rdr = cmd.ExecuteReader();
 
             int foundBandId = 0;
-            string foundBandDescription = null;
+            string foundBandName = null;
 
             while(rdr.Read())
             {
                 foundBandId = rdr.GetInt32(0);
-                foundBandDescription = rdr.GetString(1);
+                foundBandName = rdr.GetString(1);
             }
-            Band foundBand = new Band(foundBandDescription, foundBandId);
+            Band foundBand = new Band(foundBandName, foundBandId);
 
             if (rdr != null)
             {

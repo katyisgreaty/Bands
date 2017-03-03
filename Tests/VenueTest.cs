@@ -78,32 +78,38 @@ namespace BandTracker
         }
 
         [Fact]
-        public void Add_AddBandToVenue()
+        public void AddBand_AddsBandToVenue()
         {
-            Band newBand = new Band("Natalie Portman's Shaved Head");
-            newBand.Save();
-            Venue newVenue = new Venue("Marymoor Park");
-            newVenue.Save();
-            List<Band> expected = new List<Band>{newBand};
+            //Arrange
+            Venue testVenue = new Venue("Tractor Tavern");
+            testVenue.Save();
 
-            newVenue.AddBand(newBand.GetId());
+            Band testBand = new Band("The Flaming Lips");
+            testBand.Save();
 
-            Assert.Equal(expected, newVenue.GetBands());
+            Band testBand2 = new Band("The Taverns");
+            testBand2.Save();
+
+            //Act
+            testVenue.AddBand(testBand);
+            testVenue.AddBand(testBand2);
+
+            List<Band> result = testVenue.GetBands();
+            List<Band> testList = new List<Band>{testBand, testBand2};
+
+            //Assert
+            Assert.Equal(testList, result);
         }
 
         [Fact]
         public void Delete_DeleteBandFromVenue()
         {
-            Band newBand = new Band("Natalie Portman's Shaved Head");
-            newBand.Save();
-            Venue newVenue = new Venue("Marymoor Park");
+            Venue newVenue = new Venue("Tractor Tavern");
             newVenue.Save();
-            List<Band> expected = new List<Band>{};
 
-            newVenue.AddBand(newBand.GetId());
-            newVenue.DeleteBand(newBand.GetId());
+            Venue.Delete(newVenue.GetId());
 
-            Assert.Equal(expected, newVenue.GetBands());
+            Assert.Equal(0, Venue.GetAll().Count);
         }
 
         [Fact]
