@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url("/Content/img/concert.jpeg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+main {
+    flex: 1 0 auto;
+}
+
+#footer {
+    background-color: #69777C;
+}
+
+#header {
+    background-color: #69777C;
+    height: 160%;
+    padding-top: 2%;
+}
+
+#title {
+    font-size: 80px;
+    margin-left: 5%;
+}
+
+#rendered {
+    padding-top: 10%;
+}
+
+#panel-items {
+    font-size: 22px;
+}

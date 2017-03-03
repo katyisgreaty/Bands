@@ -30,6 +30,10 @@ namespace BandTracker
         {
             _name = newName;
         }
+        public override int GetHashCode()
+        {
+            return this.GetName().GetHashCode();
+        }
 
         public override bool Equals(System.Object otherVenue)
         {

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/Content/css/styles.css">
+
+    <meta charset="utf-8">
+    <title>Bands! Venues! Music!</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper" id="header">
+                <a href="/" class="brand-logo center" id="title">Bands! Venues! Music!</a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="/bands" id="panel-items">Bands</a></li>
+                    <li><a href="/venues" id="panel-items">Venues</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container" id="rendered">
+            @RenderBody()
+
+        </div>
+    </main>
+
+    <footer class="page-footer" id="footer">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Katy
+                <a class="grey-text text-lighten-4 right" href="/">Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+</body>
+</html>
