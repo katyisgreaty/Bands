@@ -92,6 +92,21 @@ namespace BandTracker
         }
 
         [Fact]
+        public void Add_DeleteBandFromVenue()
+        {
+            Band newBand = new Band("Natalie Portman's Shaved Head");
+            newBand.Save();
+            Venue newVenue = new Venue("Marymoor Park");
+            newVenue.Save();
+            List<Band> expected = new List<Band>{};
+
+            newVenue.AddBand(newBand.GetId());
+            newVenue.DeleteBand(newBand.GetId());
+
+            Assert.Equal(expected, newVenue.GetBands());
+        }
+
+        [Fact]
         public void Update_UpdateInDatabase_true()
         {
             //Arrange
