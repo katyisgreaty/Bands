@@ -21,15 +21,30 @@ namespace BandTracker
         }
 
         [Fact]
-       public void Equals_BandsReturnEqualIfSameName_true()
-       {
-           //Arrange, Act
-           Band firstBand = new Band("The Lumineers");
-           Band secondBand = new Band("The Lumineers");
+        public void Equals_BandsReturnEqualIfSameName_true()
+        {
+            //Arrange, Act
+            Band firstBand = new Band("The Lumineers");
+            Band secondBand = new Band("The Lumineers");
 
-           //Assert
-           Assert.Equal(firstBand, secondBand);
-       }
+            //Assert
+            Assert.Equal(firstBand, secondBand);
+        }
+
+        [Fact]
+        public void Save_SavesBandToDatabase_true()
+        {
+            //Arrange
+            Band testBand = new Band("Bastille");
+            testBand.Save();
+
+            //Act
+            List<Band> result = Band.GetAll();
+            List<Band> testList = new List<Band>{testBand};
+
+            //Assert
+            Assert.Equal(testList, result);
+        }
 
 
         public void Dispose()
