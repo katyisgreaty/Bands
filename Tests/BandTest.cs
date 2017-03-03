@@ -46,6 +46,25 @@ namespace BandTracker
             Assert.Equal(testList, result);
         }
 
+        [Fact]
+        public void Save_AssignsIdToBandObject_true()
+        {
+            //Arrange
+            Band testBand = new Band("Florence and the Machine");
+            testBand.Save();
+
+            //Act
+            Band savedBand = Band.GetAll()[0];
+
+            int result = savedBand.GetId();
+            int testId = testBand.GetId();
+
+            //Assert
+            Assert.Equal(testId, result);
+        }
+
+
+
 
         public void Dispose()
         {
