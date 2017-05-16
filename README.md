@@ -8,7 +8,7 @@
 
 _This webpage allows the user to manage their database of bands and venues with a many-to-many relationship. In other words, multiple bands can perform at multiple venues, and venues can host multiple bands._
 
-## Setup/Installation Requirements
+## Setup/Installation Requirements 
 
 * Clone the git from the repository at https://github.com/katyisgreaty/Bands.
 * In Powershell, navigate to the git's location
